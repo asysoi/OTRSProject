@@ -35,7 +35,7 @@ public class OTRSApplicationAWT {
 	private MenuItem linkItem;
 	private MenuItem propertyItem;
 	private MenuItem exitItem;
-
+	
 	public static void main(String[] args) {
 		try {
 			UIManager
@@ -126,7 +126,7 @@ public class OTRSApplicationAWT {
 			props.setProperty(OTRS.PR_PSW,
 					encrypter.decrypt(props.getProperty(OTRS.PR_PSW)));
 			
-			// Chrck autologin setting
+			// Check autologin setting in master branch
 			if (Boolean.getBoolean(props.getProperty(OTRS.PR_AUTOLOGIN))) {
 			   autologin();
 			}
