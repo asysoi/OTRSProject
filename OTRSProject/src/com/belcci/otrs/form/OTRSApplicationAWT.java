@@ -61,7 +61,7 @@ public class OTRSApplicationAWT {
 
 	private void createAndShowGUI() {
 		if (!SystemTray.isSupported()) {
-			LOG.info("SystemTray не поддерживается в сиcтеме.");
+			LOG.info("SystemTray пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅcпїЅпїЅпїЅпїЅ.");
 			return;
 		}
 
@@ -100,7 +100,7 @@ public class OTRSApplicationAWT {
 			tray.add(trayIcon);
 		} catch (AWTException e) {
 			System.out
-					.println("Приложение не может быть размещено в системной области.");
+					.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.");
 			return;
 		}
 		OTRSRepository.getInstance().setTray(tray);
@@ -126,7 +126,11 @@ public class OTRSApplicationAWT {
 			props.setProperty(OTRS.PR_PSW,
 					encrypter.decrypt(props.getProperty(OTRS.PR_PSW)));
 			
+<<<<<<< HEAD
 			// Check autologin setting in master branch
+=======
+			// Check autologin setting from GitHub
+>>>>>>> refs/remotes/choose_remote_name/master
 			if (Boolean.getBoolean(props.getProperty(OTRS.PR_AUTOLOGIN))) {
 			   autologin();
 			}
@@ -153,7 +157,7 @@ public class OTRSApplicationAWT {
 		URL imageURL = OTRSApplicationAWT.class.getResource(path);
 
 		if (imageURL == null) {
-			System.err.println("Ресурс не найден: " + path);
+			System.err.println("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: " + path);
 			return null;
 		} else {
 			return (new ImageIcon(imageURL, description)).getImage();
