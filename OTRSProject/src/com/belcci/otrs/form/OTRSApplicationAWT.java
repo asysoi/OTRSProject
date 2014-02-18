@@ -125,6 +125,8 @@ public class OTRSApplicationAWT {
 			DesEncrypter encrypter = new DesEncrypter();
 			props.setProperty(OTRS.PR_PSW,
 					encrypter.decrypt(props.getProperty(OTRS.PR_PSW)));
+			
+			// Chrck autologin setting
 			if (Boolean.getBoolean(props.getProperty(OTRS.PR_AUTOLOGIN))) {
 			   autologin();
 			}
@@ -140,6 +142,7 @@ public class OTRSApplicationAWT {
 					OTRS.PR_WEBSERVICE_NAMESPACE,
 					"urn:otrs-com:soap:functions");
 //					"http://www.otrs.com/GenericInterface/actions");
+			
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
