@@ -1,0 +1,16 @@
+#
+#Fri Feb 14 16:38:17 FET 2014
+BrowserPath=C\:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe
+OTRS_URL=http\://192.168.0.72
+SaveLogin=true
+OTRSWebserviceURL=/otrs/nph-genericinterface.pl/Webservice/WebOTRS
+Reminder=true
+Login=asysoi
+AutoLogin=true
+Password=hqZDVtUN5Lts0HANpamgNA\=\=
+Sound=false
+SingleWindow=true
+OTRSWebserviceNamespace=http\://www.otrs.com/GenericInterface/actions
+LastTicketID=58
+CheckTime=1
+Confirmation=true

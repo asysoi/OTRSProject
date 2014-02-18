@@ -1,0 +1,390 @@
+<TicketConnector>
+ <SessionCreate>
+         <!--You have a MANDATORY CHOICE of the next 2 items at this level-->
+         <!--Optional:-->
+         <UserLogin>?</UserLogin>
+         <!--Optional:-->
+         <CustomerUserLogin>?</CustomerUserLogin>
+         <!--Optional:-->
+         <Password>?</Password>
+</SessionCreate>
+
+
+
+<TicketCreate>
+         <!--You have a MANDATORY CHOICE of the next 3 items at this level-->
+         <!--Optional:-->
+         <UserLogin>?</UserLogin>
+         <!--Optional:-->
+         <CustomerUserLogin>?</CustomerUserLogin>
+         <!--Optional:-->
+         <SessionID>?</SessionID>
+         <!--Optional:-->
+         <Password>?</Password>
+         <Ticket>
+            <Title>?</Title>
+            <!--You have a MANDATORY CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <QueueID>?</QueueID>
+            <!--Optional:-->
+            <Queue>?</Queue>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <TypeID>?</TypeID>
+            <!--Optional:-->
+            <Type>?</Type>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <ServiceID>?</ServiceID>
+            <!--Optional:-->
+            <Service>?</Service>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <SLAID>?</SLAID>
+            <!--Optional:-->
+            <SLA>?</SLA>
+            <!--You have a MANDATORY CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <StateID>?</StateID>
+            <!--Optional:-->
+            <State>?</State>
+            <!--You have a MANDATORY CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <PriorityID>?</PriorityID>
+            <!--Optional:-->
+            <Priority>?</Priority>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <OwnerID>?</OwnerID>
+            <!--Optional:-->
+            <Owner>?</Owner>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <ResponsibleID>?</ResponsibleID>
+            <!--Optional:-->
+            <Responsible>?</Responsible>
+            <CustomerUser>?</CustomerUser>
+            <!--Optional:-->
+            <PendingTime>
+               <Year>?</Year>
+               <Month>?</Month>
+               <Day>?</Day>
+               <Hour>?</Hour>
+               <Minute>?</Minute>
+            </PendingTime>
+         </Ticket>
+         <Article>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <ArticleTypeID>?</ArticleTypeID>
+            <!--Optional:-->
+            <ArticleType>?</ArticleType>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <SenderTypeID>?</SenderTypeID>
+            <!--Optional:-->
+            <SenderType>?</SenderType>
+            <!--Optional:-->
+            <From>?</From>
+            <Subject>?</Subject>
+            <Body>?</Body>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <ContentType>?</ContentType>
+            <Charset>?</Charset>
+            <MimeType>?</MimeType>
+            <!--Optional:-->
+            <HistoryType>?</HistoryType>
+            <!--Optional:-->
+            <HistoryComment>?</HistoryComment>
+            <!--Optional:-->
+            <AutoResponseType>?</AutoResponseType>
+            <!--Optional:-->
+            <TimeUnit>?</TimeUnit>
+            <!--Optional:-->
+            <NoAgentNotify>?</NoAgentNotify>
+            <!--Zero or more repetitions:-->
+            <ForceNotificationToUserID>?</ForceNotificationToUserID>
+            <!--Zero or more repetitions:-->
+            <ExcludeNotificationToUserID>?</ExcludeNotificationToUserID>
+            <!--Zero or more repetitions:-->
+            <ExcludeMuteNotificationToUserID>?</ExcludeMuteNotificationToUserID>
+         </Article>
+         <!--Zero or more repetitions:-->
+         <DynamicField>
+            <Name>?</Name>
+            <!--1 or more repetitions:-->
+            <Value>?</Value>
+         </DynamicField>
+         <!--Zero or more repetitions:-->
+         <Attachment>
+            <Content>cid:61886944659</Content>
+            <ContentType>?</ContentType>
+            <Filename>?</Filename>
+         </Attachment>
+</TicketCreate>
+                       
+
+<TicketUpdate>
+         <!--You have a MANDATORY CHOICE of the next 3 items at this level-->
+         <!--Optional:-->
+         <UserLogin>?</UserLogin>
+         <!--Optional:-->
+         <CustomerUserLogin>?</CustomerUserLogin>
+         <!--Optional:-->
+         <SessionID>?</SessionID>
+         <!--Optional:-->
+         <Password>?</Password>
+         <!--You have a CHOICE of the next 2 items at this level-->
+         <TicketID>?</TicketID>
+         <TicketNumber>?</TicketNumber>
+         <!--Optional:-->
+         <Ticket>
+            <!--Optional:-->
+            <Title>?</Title>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <QueueID>?</QueueID>
+            <!--Optional:-->
+            <Queue>?</Queue>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <TypeID>?</TypeID>
+            <!--Optional:-->
+            <Type>?</Type>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <ServiceID>?</ServiceID>
+            <!--Optional:-->
+            <Service>?</Service>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <SLAID>?</SLAID>
+            <!--Optional:-->
+            <SLA>?</SLA>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <StateID>?</StateID>
+            <!--Optional:-->
+            <State>?</State>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <PriorityID>?</PriorityID>
+            <!--Optional:-->
+            <Priority>?</Priority>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <OwnerID>?</OwnerID>
+            <!--Optional:-->
+            <Owner>?</Owner>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <ResponsibleID>?</ResponsibleID>
+            <!--Optional:-->
+            <Responsible>?</Responsible>
+            <!--Optional:-->
+            <CustomerUser>?</CustomerUser>
+            <!--Optional:-->
+            <PendingTime>
+               <Year>?</Year>
+               <Month>?</Month>
+               <Day>?</Day>
+               <Hour>?</Hour>
+               <Minute>?</Minute>
+            </PendingTime>
+         </Ticket>
+         <!--Optional:-->
+         <Article>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <ArticleTypeID>?</ArticleTypeID>
+            <!--Optional:-->
+            <ArticleType>?</ArticleType>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <SenderTypeID>?</SenderTypeID>
+            <!--Optional:-->
+            <SenderType>?</SenderType>
+            <!--Optional:-->
+            <From>?</From>
+            <Subject>?</Subject>
+            <Body>?</Body>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <!--Optional:-->
+            <ContentType>?</ContentType>
+            <Charset>?</Charset>
+            <MimeType>?</MimeType>
+            <!--Optional:-->
+            <HistoryType>?</HistoryType>
+            <!--Optional:-->
+            <HistoryComment>?</HistoryComment>
+            <!--Optional:-->
+            <AutoResponseType>?</AutoResponseType>
+            <!--Optional:-->
+            <TimeUnit>?</TimeUnit>
+            <!--Optional:-->
+            <NoAgentNotify>?</NoAgentNotify>
+            <!--Zero or more repetitions:-->
+            <ForceNotificationToUserID>?</ForceNotificationToUserID>
+            <!--Zero or more repetitions:-->
+            <ExcludeNotificationToUserID>?</ExcludeNotificationToUserID>
+            <!--Zero or more repetitions:-->
+            <ExcludeMuteNotificationToUserID>?</ExcludeMuteNotificationToUserID>
+         </Article>
+         <!--Zero or more repetitions:-->
+         <DynamicField>
+            <Name>?</Name>
+            <!--1 or more repetitions:-->
+            <Value>?</Value>
+         </DynamicField>
+         <!--Zero or more repetitions:-->
+         <Attachment>
+            <Content>cid:166861569966</Content>
+            <ContentType>?</ContentType>
+            <Filename>?</Filename>
+         </Attachment>
+</TicketUpdate>
+
+<TicketGet>
+         <UserLogin>?</UserLogin>
+         <CustomerUserLogin>?</CustomerUserLogin>
+         <SessionID>?</SessionID>
+         <Password>?</Password>
+         <TicketID>?</TicketID>
+         <DynamicFields>?</DynamicFields>
+         <Extended>?</Extended>
+         <AllArticles>?</AllArticles>
+         <ArticleSenderType>?</ArticleSenderType>
+         <ArticleOrder>?</ArticleOrder>
+         <ArticleLimit>?</ArticleLimit>
+         <Attachments>?</Attachments>
+</TicketGet>
+
+
+ <TicketSearch>
+         <UserLogin>?</UserLogin>
+         <CustomerUserLogin>?</CustomerUserLogin>
+         <SessionID>?</SessionID>
+         <Password>?</Password>
+         <Limit>?</Limit>
+         <TicketNumber>?</TicketNumber>
+         <Title>?</Title>
+         <Queues>?</Queues>
+         <QueueIDs>?</QueueIDs>
+         <UseSubQueues>?</UseSubQueues>
+         <Types>?</Types>
+         <TypeIDs>?</TypeIDs>
+         <States>?</States>
+         <StateIDs>?</StateIDs>
+         <StateType>?</StateType>
+         <StateTypeIDs>?</StateTypeIDs>
+         <Priorities>?</Priorities>
+         <PriorityIDs>?</PriorityIDs>
+         <Services>?</Services>
+         <ServiceIDs>?</ServiceIDs>
+         <SLAs>?</SLAs>
+         <SLAIDs>?</SLAIDs>
+         <Locks>?</Locks>
+         <LockIDs>?</LockIDs>
+         <OwnerIDs>?</OwnerIDs>
+         <ResponsibleIDs>?</ResponsibleIDs>
+         <WatchUserIDs>?</WatchUserIDs>
+         <CustomerID>?</CustomerID>
+         <CustomerUserLogin>?</CustomerUserLogin>
+         <CreatedUserIDs>?</CreatedUserIDs>
+         <CreatedTypes>?</CreatedTypes>
+         <CreatedTypeIDs>?</CreatedTypeIDs>
+         <CreatedPriorities>?</CreatedPriorities>
+         <CreatedPriorityIDs>?</CreatedPriorityIDs>
+         <CreatedStates>?</CreatedStates>
+         <CreatedStateIDs>?</CreatedStateIDs>
+         <CreatedQueues>?</CreatedQueues>
+         <CreatedQueueIDs>?</CreatedQueueIDs>
+         <DynamicFields>
+            <Equals>?</Equals>
+            <Like>?</Like>
+            <GreaterThan>?</GreaterThan>
+            <GreaterThanEquals>?</GreaterThanEquals>
+            <SmallerThan>?</SmallerThan>
+            <SmallerThanEquals>?</SmallerThanEquals>
+         </DynamicFields>
+         <Ticketflag>
+            <Seen>?</Seen>
+         </Ticketflag>
+         <!--Optional:-->
+         <From>?</From>
+         <!--Optional:-->
+         <To>?</To>
+         <!--Optional:-->
+         <Cc>?</Cc>
+         <!--Optional:-->
+         <Subject>?</Subject>
+         <!--Optional:-->
+         <Body>?</Body>
+         <!--Optional:-->
+         <FullTextIndex>?</FullTextIndex>
+         <!--Optional:-->
+         <ContentSearch>?</ContentSearch>
+         <!--Optional:-->
+         <ConditionInline>?</ConditionInline>
+         <!--Optional:-->
+         <ArticleCreateTimeOlderMinutes>?</ArticleCreateTimeOlderMinutes>
+         <!--Optional:-->
+         <ArticleCreateTimeNewerMinutes>?</ArticleCreateTimeNewerMinutes>
+         <!--Optional:-->
+         <ArticleCreateTimeNewerDate>?</ArticleCreateTimeNewerDate>
+         <!--Optional:-->
+         <ArticleCreateTimeOlderDate>?</ArticleCreateTimeOlderDate>
+         <!--Optional:-->
+         <TicketCreateTimeOlderMinutes>?</TicketCreateTimeOlderMinutes>
+         <!--Optional:-->
+         <ATicketCreateTimeNewerMinutes>?</ATicketCreateTimeNewerMinutes>
+         <!--Optional:-->
+         <TicketCreateTimeNewerDate>?</TicketCreateTimeNewerDate>
+         <!--Optional:-->
+         <TicketCreateTimeOlderDate>?</TicketCreateTimeOlderDate>
+         <!--Optional:-->
+         <TicketChangeTimeOlderMinutes>?</TicketChangeTimeOlderMinutes>
+         <!--Optional:-->
+         <TicketChangeTimeNewerMinutes>?</TicketChangeTimeNewerMinutes>
+         <!--Optional:-->
+         <TicketChangeTimeNewerDate>?</TicketChangeTimeNewerDate>
+         <!--Optional:-->
+         <TicketChangeTimeOlderDate>?</TicketChangeTimeOlderDate>
+         <!--Optional:-->
+         <TicketCloseTimeOlderMinutes>?</TicketCloseTimeOlderMinutes>
+         <!--Optional:-->
+         <TicketCloseTimeNewerMinutes>?</TicketCloseTimeNewerMinutes>
+         <!--Optional:-->
+         <TicketCloseTimeNewerDate>?</TicketCloseTimeNewerDate>
+         <!--Optional:-->
+         <TicketCloseTimeOlderDate>?</TicketCloseTimeOlderDate>
+         <!--Optional:-->
+         <TicketPendingTimeOlderMinutes>?</TicketPendingTimeOlderMinutes>
+         <!--Optional:-->
+         <TicketPendingTimeNewerMinutes>?</TicketPendingTimeNewerMinutes>
+         <!--Optional:-->
+         <TicketPendingTimeNewerDate>?</TicketPendingTimeNewerDate>
+         <!--Optional:-->
+         <TicketPendingTimeOlderDate>?</TicketPendingTimeOlderDate>
+         <!--Optional:-->
+         <TicketEscalationTimeOlderMinutes>?</TicketEscalationTimeOlderMinutes>
+         <!--Optional:-->
+         <TTicketEscalationTimeNewerMinutes>?</TTicketEscalationTimeNewerMinutes>
+         <!--Optional:-->
+         <TicketEscalationTimeNewerDate>?</TicketEscalationTimeNewerDate>
+         <!--Optional:-->
+         <TicketEscalationTimeOlderDate>?</TicketEscalationTimeOlderDate>
+         <!--Optional:-->
+         <ArchiveFlags>?</ArchiveFlags>
+         <!--Zero or more repetitions:-->
+         <OrderBy>?</OrderBy>
+         <!--Zero or more repetitions:-->
+         <SortBy>?</SortBy>
+         <!--Zero or more repetitions:-->
+         <CustomerUserID>?</CustomerUserID>
+</TicketSearch>
+
+
+
+                       

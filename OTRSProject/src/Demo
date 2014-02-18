@@ -1,0 +1,323 @@
+I wrote java application that once configured starting to perform long time task and may stay without user interaction days, weeks, months, years.
+
+For this kind of applications (good example mTorrent) very important to be possible close application window but keep application working and have possibility to open application from systray icon.
+
+There are two code snippets below.
+
+First creates systray icon with menu that have two menu items: "Open" and "Exit".
+
+
+http://www.oracle.com/technetwork/articles/javase/systemtray-139788.html
+
+
+
+private void createTray() {
+        Tray tray;
+        TrayItem item;
+        Image image;
+        tray = display.getSystemTray();
+        if (tray == null) {
+            System.out.println("The system tray is not available");
+        } else {
+            item = new TrayItem(tray, SWT.NONE);
+            item.setToolTipText("Wp Commenter");
+            item.addListener(SWT.Show, new Listener() {
+                public void handleEvent(Event event) {
+                    System.out.println("show");
+                }
+            });
+            item.addListener(SWT.Hide, new Listener() {
+                public void handleEvent(Event event) {
+                    System.out.println("hide");
+                }
+            });
+            item.addListener(SWT.Selection, new Listener() {
+                public void handleEvent(Event event) {
+                    System.out.println("selection");
+                }
+            });
+            item.addListener(SWT.DefaultSelection, new Listener() {
+                public void handleEvent(Event event) {
+                    System.out.println("default selection");
+                }
+            });
+            final Menu menu = new Menu(shell, SWT.POP_UP);
+ 
+            MenuItem openMenuItem = new MenuItem(menu, SWT.PUSH);
+            openMenuItem.setText("Open");
+            openMenuItem.addListener(SWT.Selection, new Listener() {
+                public void handleEvent(Event event) {
+                    shell.setVisible(true);
+                    shell.setMaximized(true);
+                }
+            });
+            MenuItem exitMenuItem = new MenuItem(menu, SWT.PUSH);
+            exitMenuItem.setText("Exit");
+            exitMenuItem.addListener(SWT.Selection, new Listener() {
+                public void handleEvent(Event event) {
+                    System.exit(0);
+                }
+            });
+ 
+            item.addListener(SWT.MenuDetect, new Listener() {
+                public void handleEvent(Event event) {
+                    menu.setVisible(true);
+                }
+            });
+ 
+            // image = SWTResourceManager.getImage(MakeBreak.class, "Backup-Green-Button-icon.png");
+            image = SWTResourceManager.getImage(WpCommenter.class, "images/mb4.png");
+            item.setImage(image);
+        }
+ 
+ }
+
+
+Second adds listener to shell that "hide" application behind systray icon on "Closed" event.
+
+shell.addShellListener(new ShellListener() {
+            public void shellActivated(ShellEvent event) {
+            }
+ 
+            public void shellClosed(ShellEvent event) {
+                event.doit = false;  //!! for this code i looked long time
+                shell.setVisible(false);
+            }
+ 
+            public void shellDeactivated(ShellEvent event) {
+            }
+ 
+            public void shellDeiconified(ShellEvent event) {
+            }
+ 
+            public void shellIconified(ShellEvent event) {
+                //shell.setVisible(false);
+            }
+ });
+ 
+ 
+ 
+ ---------------------------------------------------------------------------
+ 
+ final TrayIcon trayIcon;
+ 
+        if (SystemTray.isSupported()) {
+ 
+            SystemTray tray = SystemTray.getSystemTray();
+            Image image = Toolkit.getDefaultToolkit().getImage("tray.gif");
+ 
+ 
+ 
+            ActionListener exitListener = new ActionListener() {
+ 
+                public void actionPerformed(ActionEvent e) {
+                    System.out.println("Exiting...");
+                    System.exit(0);
+                }
+            };
+ 
+            final JPopupMenu popup = new JPopupMenu();
+            JMenuItem defaultItem = new JMenuItem("Exit");
+            defaultItem.addActionListener(exitListener);
+            popup.add(defaultItem);
+ 
+            trayIcon = new TrayIcon(image, "Tray Demo");
+ 
+            ActionListener actionListener = new ActionListener() {
+ 
+                public void actionPerformed(ActionEvent e) {
+                    trayIcon.displayMessage("Action Event",
+                            "An Action Event Has Been Performed!",
+                            TrayIcon.MessageType.INFO);
+                }
+            };
+ 
+            trayIcon.setImageAutoSize(true);
+            trayIcon.addActionListener(actionListener);
+            trayIcon.addMouseListener(new MouseAdapter() {
+ 
+                @Override
+                public void mouseReleased(MouseEvent e) {
+                    if (e.isPopupTrigger()) {
+                        popup.setLocation(e.getX(), e.getY());
+                        popup.setInvoker(popup);
+                        popup.setVisible(true);
+                    }
+                }
+            });
+ 
+            try {
+                tray.add(trayIcon);
+            } catch (AWTException e) {
+                System.err.println("TrayIcon could not be added.");
+            }
+ 
+        } else {
+            //  System Tray is not supported
+        }
+        
+        
+------------------------------
+import java.io.File;
+02.
+ 
+03.
+import java.io.IOException;
+04.
+ 
+05.
+import java.io.FileInputStream;
+06.
+ 
+07.
+import java.io.FileNotFoundException;
+08.
+ 
+09.
+import java.util.Properties;
+10.
+ 
+11.
+ 
+12.
+ 
+13.
+public class PropertyReader {
+14.
+ 
+15.
+ 
+16.
+ 
+17.
+private static final String sFileName = "my.properties";
+18.
+ 
+19.
+private static String sDirSeparator = System.getProperty("file.separator");
+20.
+ 
+21.
+private static Properties props = new Properties();
+22.
+ 
+23.
+ 
+24.
+ 
+25.
+public static void main(String[] args) {
+26.
+ 
+27.
+ 
+28.
+ 
+29.
+// определяем текущий каталог
+30.
+ 
+31.
+File currentDir = new File(".");
+32.
+ 
+33.
+ 
+34.
+ 
+35.
+try {
+36.
+ 
+37.
+ 
+38.
+ 
+39.
+// определяем полный путь к файлу
+40.
+ 
+41.
+String sFilePath = currentDir.getCanonicalPath() + sDirSeparator + sFileName;
+42.
+ 
+43.
+ 
+44.
+ 
+45.
+// создаем поток для чтения из файла
+46.
+ 
+47.
+FileInputStream ins = new FileInputStream(sFilePath);
+48.
+ 
+49.
+ 
+50.
+ 
+51.
+// загружаем свойства
+52.
+ 
+53.
+props.load(ins);
+54.
+ 
+55.
+ 
+56.
+ 
+57.
+// выводим значение для свойства mykey
+58.
+ 
+59.
+System.out.println(props.getProperty("mykey"));
+60.
+ 
+61.
+}
+62.
+ 
+63.
+catch (FileNotFoundException e) {
+64.
+ 
+65.
+System.out.println("File not found!");
+66.
+ 
+67.
+e.printStackTrace();
+68.
+ 
+69.
+}
+70.
+ 
+71.
+catch (IOException e) {
+72.
+ 
+73.
+System.out.println("IO Error!");
+74.
+ 
+75.
+e.printStackTrace();
+76.
+ 
+77.
+}       
+78.
+ 
+79.
+}
+80.
+ 
+81.
+}}        
+        
+        
