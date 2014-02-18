@@ -1,6 +1,7 @@
 package com.belcci.otrs.form;
 
 public class OTRS {
+	
 	public static final boolean DEBUG = false;
 	public static final String M_LOGIN = "Войти";
 	public static final String M_LOGOFF = "Выйти";
