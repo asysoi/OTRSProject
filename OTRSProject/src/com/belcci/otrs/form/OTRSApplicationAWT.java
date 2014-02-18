@@ -125,7 +125,9 @@ public class OTRSApplicationAWT {
 			DesEncrypter encrypter = new DesEncrypter();
 			props.setProperty(OTRS.PR_PSW,
 					encrypter.decrypt(props.getProperty(OTRS.PR_PSW)));
-			autologin();
+			if (Boolean.getBoolean(props.getProperty(OTRS.PR_AUTOLOGIN))) {
+			   autologin();
+			}
 		} catch (FileNotFoundException ex) {
 			LOG.info("Default properties loading ...");
 
