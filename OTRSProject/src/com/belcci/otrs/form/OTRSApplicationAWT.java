@@ -126,11 +126,9 @@ public class OTRSApplicationAWT {
 			props.setProperty(OTRS.PR_PSW,
 					encrypter.decrypt(props.getProperty(OTRS.PR_PSW)));
 			
-<<<<<<< HEAD
 			// Check autologin setting in master branch
-=======
 			// Check autologin setting from GitHub
->>>>>>> refs/remotes/choose_remote_name/master
+			
 			if (Boolean.getBoolean(props.getProperty(OTRS.PR_AUTOLOGIN))) {
 			   autologin();
 			}
